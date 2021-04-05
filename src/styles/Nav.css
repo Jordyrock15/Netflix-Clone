@@ -1,0 +1,99 @@
+.nav {
+	position: fixed;
+	top: 0;
+	padding: 20px;
+	width: 100%;
+	height: 30px;
+	z-index: 1;
+
+	/* Animations */
+	transition-timing-function: ease-in;
+	transition: all 0.5s;
+}
+
+.nav_contents {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav_black {
+	background-color: #111;
+}
+
+.nav_logo {
+	position: relative;
+
+	left: 0;
+	width: 100px;
+	object-fit: contain;
+	padding-left: 20px;
+	cursor: pointer;
+}
+
+.nav_avatar {
+	cursor: pointer;
+	position: fixed;
+	margin-right: 50px;
+
+	right: 20px;
+	width: 30px;
+}
+
+.nav_dropdown {
+	position: relative;
+	display: block;
+}
+
+.nav_dropdown_content {
+	position: absolute;
+	color: white;
+	background-color: #111;
+	right: 35px;
+	top: 60px;
+	width: 130px;
+	visibility: hidden;
+	padding: 1rem;
+	transition: 0.25s;
+}
+
+.nav_dropdown:hover .nav_dropdown_content {
+	visibility: visible;
+	transition-delay: 0s;
+}
+
+.drop_divider {
+	width: 100%;
+	padding: 0 !important;
+	border-bottom: 1px gray solid;
+	margin: 0.5rem 0;
+}
+
+.drop_block {
+	position: absolute;
+	height: 1.5rem;
+	width: 1.5rem;
+	right: 35%;
+	top: -20px;
+	background: blue;
+}
+
+.nav_dropdown_content > h4 {
+	cursor: pointer;
+	margin: 0.5rem 0;
+}
+
+.nav-light-link {
+	font-weight: 400;
+}
+
+.notificationIcon {
+	position: fixed;
+	width: 30px;
+	right: 140px;
+}
+
+.searchIcon {
+	position: fixed;
+	width: 30px;
+	right: 200px;
+}
