@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Nav from '../components/Nav';
 import AddProfile from '../components/AddProfile';
 import '../styles/ProfileScreen.css';
+import LoadedProfile from '../components/LoadedProfile';
+import { useSelector } from 'react-redux';
+import { selectProfile } from '../features/profileSlice';
 
 function ProfileScreen() {
+	const profiles = useSelector(selectProfile);
+
 	return (
 		<div className='ProfileScreen'>
 			<Nav />
@@ -12,18 +17,9 @@ function ProfileScreen() {
 				<h1 className='header'>Manage Profiles:</h1>
 
 				<div className='profile-container'>
-					<img
-						src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png'
-						alt=''
-					/>
-					<img
-						src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png'
-						alt=''
-					/>
-					<img
-						src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png'
-						alt=''
-					/>
+					{profiles?.map((profile) => (
+						<LoadedProfile name={profile.name} key={profile.name} />
+					))}
 
 					<AddProfile />
 				</div>

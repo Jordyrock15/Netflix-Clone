@@ -1,0 +1,13 @@
+.profile_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+}
+
+.profile_container > img {
+	width: 150px;
+	margin-bottom: 1rem;
+	cursor: pointer;
+}

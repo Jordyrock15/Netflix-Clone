@@ -5,13 +5,15 @@ import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 //Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { auth } from './firebase';
+import db, { auth } from './firebase';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import AccountScreen from './screens/AccountScreen';
 import { selectSubscription, subscriptionChecker } from './features/subscriptionSlice';
 import ProfileScreen from './screens/ProfileScreen';
 import HelpScreen from './screens/HelpScreen';
+import { unLoadProfiles } from './features/profileSlice';
 
 function App() {
 	const user = useSelector(selectUser);
@@ -31,6 +33,7 @@ function App() {
 			} else {
 				// Logged out
 				dispatch(subscriptionChecker(null));
+				dispatch(unLoadProfiles());
 				dispatch(logout());
 			}
 		});
@@ -54,11 +57,11 @@ function App() {
 						</Route>
 
 						<Route path='/help'>
-							<HelpScreen />
+							{sub != null ? <HelpScreen /> : <AccountScreen />}
 						</Route>
 
 						<Route path='/profiles'>
-							<ProfileScreen />
+							{sub != null ? <ProfileScreen /> : <AccountScreen />}
 						</Route>
 					</Switch>
 				)}
