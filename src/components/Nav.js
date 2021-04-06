@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import { selectSubscription } from '../features/subscriptionSlice';
 import { auth } from '../firebase';
 //Icons
-import notificationIcon from '../styles/icons/notification.png';
+import notificationIcon from '../styles/icons/notification.svg';
 import netflixLogo from '../styles/icons/netflix-logo.png';
-import searchIcon from '../styles/icons/search.png';
+import searchIcon from '../styles/icons/search.svg';
 
 import '../styles/Nav.css';
 
@@ -14,6 +14,7 @@ function Nav() {
 	const [show, handleShow] = useState(false);
 	const history = useHistory();
 	const subscription = useSelector(selectSubscription);
+	const location = useLocation();
 
 	const transitionNavBar = () => {
 		if (window.scrollY > 100) {
@@ -61,12 +62,33 @@ function Nav() {
 						</h4>
 					</div>
 				</div>
+
 				<img
 					className='notificationIcon'
 					src={`${notificationIcon}`}
 					alt='notificationIcon'
+					style={
+						location.pathname === '/help' ||
+						location.pathname === '/account' ||
+						location.pathname === '/profiles' ||
+						subscription === null
+							? { display: `none` }
+							: { display: `block` }
+					}
 				/>
-				<img className='searchIcon' src={`${searchIcon}`} alt='searchIcon' />
+				<img
+					className='searchIcon'
+					src={`${searchIcon}`}
+					alt='searchIcon'
+					style={
+						location.pathname === '/help' ||
+						location.pathname === '/account' ||
+						location.pathname === '/profiles' ||
+						subscription === null
+							? { display: `none` }
+							: { display: `block` }
+					}
+				/>
 			</div>
 		</div>
 	);

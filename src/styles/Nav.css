@@ -90,10 +90,12 @@
 	position: fixed;
 	width: 30px;
 	right: 140px;
+	cursor: pointer;
 }
 
 .searchIcon {
 	position: fixed;
 	width: 30px;
 	right: 200px;
+	cursor: pointer;
 }
