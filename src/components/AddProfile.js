@@ -47,7 +47,6 @@ function AddProfile() {
 				movieList: '',
 			})
 			.then(() => {
-				setIsProfiles([]);
 				console.log('Document Written');
 			})
 			.catch((error) => {
