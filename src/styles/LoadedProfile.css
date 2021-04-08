@@ -6,8 +6,21 @@
 	color: white;
 }
 
-.profile_container > img {
+.profile_icon {
 	width: 150px;
 	margin-bottom: 1rem;
 	cursor: pointer;
+}
+
+.profile_close_icon {
+	position: absolute;
+	top: -9%;
+	right: -10%;
+	width: 2rem;
+	height: 2rem;
+	cursor: pointer;
+}
+
+.profile_icon_container {
+	position: relative;
 }
