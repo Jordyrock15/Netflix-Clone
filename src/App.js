@@ -14,10 +14,12 @@ import { selectSubscription, subscriptionChecker } from './features/subscription
 import ProfileScreen from './screens/ProfileScreen';
 import HelpScreen from './screens/HelpScreen';
 import { unLoadProfiles } from './features/profileSlice';
+import SearchScreen from './screens/SearchScreen';
 
 function App() {
 	const user = useSelector(selectUser);
 	const sub = useSelector(selectSubscription);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -32,7 +34,6 @@ function App() {
 				);
 			} else {
 				// Logged out
-
 				dispatch(unLoadProfiles());
 				dispatch(subscriptionChecker(null));
 				dispatch(logout());
@@ -65,12 +66,16 @@ function App() {
 							<HelpScreen />
 						</Route> */}
 
+						<Route path='/search'>
+							<SearchScreen />
+						</Route>
+
 						<Route path={`/`} exact>
 							{sub != null ? <HomeScreen /> : <AccountScreen />}
 						</Route>
 
 						<Route path='/profiles'>
-							{sub === null ? <ProfileScreen /> : <AccountScreen />}
+							{sub != null ? <ProfileScreen /> : <AccountScreen />}
 						</Route>
 
 						<Route path='/help'>

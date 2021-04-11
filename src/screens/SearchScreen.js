@@ -1,0 +1,13 @@
+import React from 'react';
+import Nav from '../components/Nav';
+import '../styles/SearchScreen.css';
+
+function SearchScreen() {
+	return (
+		<div className='search_screen'>
+			<Nav />
+		</div>
+	);
+}
+
+export default SearchScreen;
