@@ -5,7 +5,7 @@ import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
 //Router
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import db, { auth } from './firebase';
+import { auth } from './firebase';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
@@ -32,8 +32,9 @@ function App() {
 				);
 			} else {
 				// Logged out
-				dispatch(subscriptionChecker(null));
+
 				dispatch(unLoadProfiles());
+				dispatch(subscriptionChecker(null));
 				dispatch(logout());
 			}
 		});
@@ -52,16 +53,28 @@ function App() {
 							<AccountScreen />
 						</Route>
 
+						{/* <Route path={`/`} exact>
+							<HomeScreen />
+						</Route>
+
+						<Route path='/profiles'>
+							<ProfileScreen />
+						</Route>
+
+						<Route path='/help'>
+							<HelpScreen />
+						</Route> */}
+
 						<Route path={`/`} exact>
 							{sub != null ? <HomeScreen /> : <AccountScreen />}
 						</Route>
 
-						<Route path='/help'>
-							{sub != null ? <HelpScreen /> : <AccountScreen />}
+						<Route path='/profiles'>
+							{sub === null ? <ProfileScreen /> : <AccountScreen />}
 						</Route>
 
-						<Route path='/profiles'>
-							{sub != null ? <ProfileScreen /> : <AccountScreen />}
+						<Route path='/help'>
+							{sub != null ? <HelpScreen /> : <AccountScreen />}
 						</Route>
 					</Switch>
 				)}

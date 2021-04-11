@@ -1,15 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
-import { loadProfiles } from '../features/profileSlice';
+import { loadProfiles, selectProfile } from '../features/profileSlice';
 import db from '../firebase';
 import addProfileIcon from '../styles/icons/AddProfile.svg';
 import '../styles/AddProfile.css';
 
 function AddProfile() {
 	const [isActive, setIsActive] = useState(false);
-	const [isProfiles, setIsProfiles] = useState([]);
-
+	const profiles = useSelector(selectProfile);
 	const user = useSelector(selectUser);
 
 	const profileName = useRef(null);
@@ -28,7 +27,7 @@ function AddProfile() {
 						movieList: profile.data().movieList,
 					});
 				});
-				setIsProfiles(profileArray);
+				dispatch(loadProfiles(profileArray));
 			})
 			.catch((error) => {
 				console.error('Error fetching profiles', error);
@@ -48,24 +47,22 @@ function AddProfile() {
 			})
 			.then(() => {
 				console.log('Document Written');
+				dispatch(loadProfiles([]));
+				profileLoad();
 			})
 			.catch((error) => {
 				console.error('Error writing document: ', error);
 			});
 
-		setIsProfiles([]);
-		profileLoad();
 		setIsActive(false);
 	};
 
-	useEffect(() => {
-		setIsProfiles([]);
-		profileLoad();
-	}, []);
+	// useEffect(() => {
+	// 	setIsProfiles([]);
+	// 	profileLoad();
+	// }, []);
 
-	useEffect(() => {
-		dispatch(loadProfiles(isProfiles));
-	}, [dispatch, isProfiles]);
+	console.log(profiles);
 
 	return (
 		<div className='AddProfile_container' onClick={() => setIsActive(true)}>

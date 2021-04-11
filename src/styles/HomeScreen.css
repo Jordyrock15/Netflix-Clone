@@ -1,0 +1,12 @@
+.homeScreen {
+	overflow-x: hidden;
+}
+
+.homeRow {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.homeRow::-webkit-scrollbar {
+	display: none;
+}

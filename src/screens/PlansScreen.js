@@ -8,9 +8,12 @@ import { useDispatch } from 'react-redux';
 import { subscriptionChecker } from '../features/subscriptionSlice';
 
 function PlansScreen() {
-	const [products, setProducts] = useState([]);
+	const [isProducts, setProducts] = useState([]);
 	const user = useSelector(selectUser);
 	const [subscription, setSubscription] = useState(null);
+
+	const [mount, setMount] = useState(true);
+
 	const dispatch = useDispatch();
 
 	const loadCheckout = async (priceId) => {
@@ -20,7 +23,7 @@ function PlansScreen() {
 			.collection('checkout_sessions')
 			.add({
 				price: priceId,
-				success_url: window.location.origin,
+				success_url: `${window.location.origin}/profiles`,
 				cancel_url: window.location.origin,
 			});
 
@@ -44,7 +47,8 @@ function PlansScreen() {
 	};
 
 	useEffect(() => {
-		db.collection('customers')
+		let unsubscribe = db
+			.collection('customers')
 			.doc(user.uid)
 			.collection('subscriptions')
 			.get()
@@ -62,6 +66,8 @@ function PlansScreen() {
 					);
 				});
 			});
+
+		return () => unsubscribe;
 	}, [user.uid, dispatch]);
 
 	useEffect(() => {
@@ -80,8 +86,15 @@ function PlansScreen() {
 						};
 					});
 				});
+
 				setProducts(products);
+				if (mount) {
+					setMount(false);
+				}
 			});
+
+		console.log('hi');
+		return () => mount;
 	}, []);
 
 	return (
@@ -94,7 +107,7 @@ function PlansScreen() {
 				</p>
 			)}
 
-			{Object.entries(products).map(([productId, productData]) => {
+			{Object.entries(isProducts).map(([productId, productData]) => {
 				// Add some logic to check if the user's subscription is active...
 				const isCurrentPackage = productData.name
 					?.toLowerCase()

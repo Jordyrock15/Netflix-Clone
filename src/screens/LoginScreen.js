@@ -25,7 +25,7 @@ function LoginScreen() {
 					<SignupScreen emailText={emailText} />
 				) : (
 					<>
-						<h1>Unlimted films, TV programmes and more.</h1>
+						<h1>Unlimited films, TV programmes and more.</h1>
 						<h2>Watch anywhere. Cancel at any time.</h2>
 						<h3>
 							Ready to watch? enter your email to create or restart your membership

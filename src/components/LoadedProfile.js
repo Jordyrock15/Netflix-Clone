@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import '../styles/LoadedProfile.css';
 import close from '../styles/icons/close.svg';
 import db from '../firebase';
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function LoadedProfile({ name }) {
 	const [isHover, setIsHover] = useState(false);
 	const user = useSelector(selectUser);
+
 	const dispatch = useDispatch();
 
 	const removeProfile = () => {
@@ -47,16 +48,12 @@ function LoadedProfile({ name }) {
 				console.error('Error fetching profiles', error);
 			});
 	};
-
-	useEffect(() => {});
 	return (
 		<div className='profile_container'>
 			<div
 				className='profile_icon_container'
 				onMouseEnter={() => {
-					{
-						name !== 'Default' && setIsHover(true);
-					}
+					name !== 'Default' && setIsHover(true);
 				}}
 				onMouseLeave={() => {
 					setIsHover(false);

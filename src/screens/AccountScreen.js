@@ -1,38 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import Nav from '../components/Nav';
 import { selectUser } from '../features/userSlice';
-import db, { auth } from '../firebase';
+import { auth } from '../firebase';
 import PlansScreen from './PlansScreen';
 import '../styles/AccountScreen.css';
-import { selectProfile } from '../features/profileSlice';
 
 function ProfileScreen() {
 	const user = useSelector(selectUser);
-	// const profiles = useSelector(selectProfile);
-
-	// const addDefaultProfile = () => {
-	// 	db.collection('customers')
-	// 		.doc(user.uid)
-	// 		.collection('profiles')
-	// 		.doc(`Default`)
-	// 		.set({
-	// 			name: 'Default',
-	// 			movieList: '',
-	// 		})
-	// 		.then(() => {
-	// 			console.log('Document Written');
-	// 		})
-	// 		.catch((error) => {
-	// 			console.error('Error writing document: ', error);
-	// 		});
-	// };
-
-	// useEffect(() => {
-	// 	if (profiles.length === 0) {
-	// 		addDefaultProfile();
-	// 	}
-	// }, []);
 
 	return (
 		<div className='profileScreen'>

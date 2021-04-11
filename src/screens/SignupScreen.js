@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../features/userSlice';
-import db, { auth } from '../firebase';
+
+import { auth } from '../firebase';
 import '../styles/SignupScreen.css';
 
 function SignupScreen({ emailText }) {
