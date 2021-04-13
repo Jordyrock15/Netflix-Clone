@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Banner.css';
+// import '../styles/Banner.css';
+import '../styles/Banner.scss';
 import axios from '../api/axios';
 import requests from '../api/Requests';
 import playIcon from '../styles/icons/Play.png';

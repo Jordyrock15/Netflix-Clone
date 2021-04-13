@@ -4,7 +4,8 @@ import Nav from '../components/Nav';
 import { selectUser } from '../features/userSlice';
 import { auth } from '../firebase';
 import PlansScreen from './PlansScreen';
-import '../styles/AccountScreen.css';
+// import '../styles/AccountScreen.css';
+import '../styles/AccountScreen.scss';
 
 function ProfileScreen() {
 	const user = useSelector(selectUser);

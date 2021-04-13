@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/LoginScreen.css';
+// import '../styles/LoginScreen.css';
+import '../styles/LoginScreen.scss';
 import SignupScreen from './SignupScreen';
 
 function LoginScreen() {

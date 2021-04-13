@@ -4,7 +4,8 @@ import { selectUser } from '../features/userSlice';
 import { loadProfiles, selectProfile } from '../features/profileSlice';
 import db from '../firebase';
 import addProfileIcon from '../styles/icons/AddProfile.svg';
-import '../styles/AddProfile.css';
+// import '../styles/AddProfile.css';
+import '../styles/AddProfile.scss';
 
 function AddProfile() {
 	const [isActive, setIsActive] = useState(false);

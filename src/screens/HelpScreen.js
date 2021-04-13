@@ -1,7 +1,8 @@
 import React from 'react';
 import AccordianItem from '../components/AccordianItem';
 import Nav from '../components/Nav';
-import '../styles/HelpScreen.css';
+// import '../styles/HelpScreen.css';
+import '../styles/HelpScreen.scss';
 import search_gray from '../styles/icons//search_gray.svg';
 
 function HelpScreen() {

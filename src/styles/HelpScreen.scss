@@ -1,0 +1,139 @@
+.helpScreen_container {
+	background: white;
+}
+
+.help_banner {
+	height: 400px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.767), rgba(0, 0, 0, 0.329), black),
+		url('../styles/icons/help-banner.jpg');
+	background-position: center;
+	object-fit: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.help_banner_container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	h1 {
+		color: white;
+		margin-bottom: 1.5rem;
+		font-size: 3rem;
+	}
+}
+
+.input_banner_container {
+	display: flex;
+	align-items: center;
+
+	input {
+		width: 40rem;
+		padding: 1rem 2.5rem;
+		font-size: 1rem;
+		border: none;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	img {
+		position: absolute;
+		margin-left: 0.5rem;
+		width: 2rem;
+		height: 2rem;
+	}
+}
+
+.questions_title {
+	text-align: center;
+	margin: 2.5rem 0rem;
+	font-size: 3rem;
+}
+
+.accordian_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-bottom: 4rem;
+}
+
+.accordian_item_title {
+	color: #e50914;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.accordian_item {
+	box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.43);
+	-webkit-box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.43);
+	-moz-box-shadow: 1px 6px 16px 1px rgba(0, 0, 0, 0.43);
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+	width: 40rem;
+}
+
+.accordian_item_answer {
+	display: none;
+}
+
+.accordian_answer_active {
+	display: block;
+}
+
+.contact_container {
+	background-color: #e9e9e9;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	padding: 1rem 2rem;
+	justify-content: space-between;
+
+	h3 {
+		font-size: 2rem;
+		color: #252525;
+	}
+}
+
+.contact_buttons {
+	button {
+		background: #ffffff;
+		border: none;
+		outline: 1px solid black;
+		color: #616161;
+		padding: 1rem 2rem;
+		font-weight: bold;
+		font-size: 1rem;
+		cursor: pointer;
+
+		&:nth-child(2) {
+			margin-left: 2rem;
+		}
+	}
+}
+
+.navbar_list {
+	display: flex;
+	list-style: none;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: 2rem;
+}
+
+.navbar_list_item {
+	margin: 1.5rem;
+	font-size: 1;
+}
+
+footer {
+	background: #232323;
+	color: #a8a8a8;
+	height: 200px;
+}

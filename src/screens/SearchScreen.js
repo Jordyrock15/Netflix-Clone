@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../components/Nav';
-import '../styles/SearchScreen.css';
+// import '../styles/SearchScreen.css';
+import '../styles/SearchScreen.scss';
 
 function SearchScreen() {
 	return (

@@ -9,7 +9,8 @@ import netflixLogo from '../styles/icons/netflix-logo.png';
 import searchIcon from '../styles/icons/search.svg';
 import axios from '../api/axios';
 
-import '../styles/Nav.css';
+// import '../styles/Nav.css';
+import '../styles/Nav.scss';
 import { searchMoviesChecker } from '../features/searchMoviesSlice';
 
 function Nav() {

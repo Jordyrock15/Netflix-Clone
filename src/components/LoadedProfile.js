@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/LoadedProfile.css';
+// import '../styles/LoadedProfile.css';
+import '../styles/LoadProfile.scss';
 import close from '../styles/icons/close.svg';
 import db from '../firebase';
 import { loadProfiles } from '../features/profileSlice';

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import Nav from '../components/Nav';
 import AddProfile from '../components/AddProfile';
-import '../styles/ProfileScreen.css';
+// import '../styles/ProfileScreen.css';
+import '../styles/ProfileScreen.scss';
 import LoadedProfile from '../components/LoadedProfile';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadProfiles, selectProfile } from '../features/profileSlice';

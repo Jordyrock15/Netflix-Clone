@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../api/axios';
 import '../styles/Row.css';
+// import '../styles/Row.scss';
 import addicon from '../styles/icons/add_icon.svg';
 
 function Row({ title, fetchUrl, isLargeRow = false }) {
