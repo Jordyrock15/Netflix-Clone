@@ -16,14 +16,6 @@
 		display: none;
 	}
 
-	.poster_container {
-		&:focus,
-		&:hover {
-			transform: scale(1.5);
-			transition-delay: 0.2s;
-		}
-	}
-
 	&:focus-within,
 	&:hover {
 		.poster_container {
@@ -58,10 +50,12 @@
 	position: relative;
 	transition: transform 500ms;
 
-	~ &:focus,
-	~ &:hover {
-		transform: translateX(25%);
-		transition-delay: 0.2s;
+	&:focus ~,
+	&:hover ~ {
+		.poster_container {
+			transform: translateX(25%);
+			transition-delay: 0.2s;
+		}
 	}
 
 	&:hover {
