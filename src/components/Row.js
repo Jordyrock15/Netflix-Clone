@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import axios from '../api/axios';
 import '../styles/Row.css';
 // import '../styles/Row.scss';
-import addicon from '../styles/icons/add_icon.svg';
+
+import RowItem from './RowItem';
 
 function Row({ title, fetchUrl, isLargeRow = false }) {
 	const [movies, setMovies] = useState([]);
@@ -28,22 +29,36 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 					(movie) =>
 						((isLargeRow && movie.poster_path) ||
 							(!isLargeRow && movie.backdrop_path)) && (
-							<div
-								className={`poster_container ${
-									isLargeRow && 'poster_container_large'
-								}`}
-								key={movie.id}
-							>
-								<img
-									className={`row_poster ${isLargeRow && 'row_poster_large'}`}
-									key={movie.id}
-									src={`${base_url}${
-										isLargeRow ? movie.poster_path : movie.backdrop_path
-									}`}
-									alt={movie.name}
+							<Fragment key={movie.id}>
+								<RowItem
+									movie_id={movie.id}
+									isLargeRow={isLargeRow}
+									poster_path={movie.poster_path}
+									backdrop_path={movie.backdrop_path}
+									movie_name={movie.name}
+									movie_title={movie.title}
+									base_url={base_url}
+									movie_description={movie.overview}
+									rating={movie?.vote_average}
 								/>
-								<img className='list_add_icon' src={`${addicon}`} alt='' />
-							</div>
+							</Fragment>
+
+							// <div
+							// 	className={`poster_container ${
+							// 		isLargeRow && 'poster_container_large'
+							// 	}`}
+							// 	key={movie.id}
+							// >
+							// 	<img
+							// 		className={`row_poster ${isLargeRow && 'row_poster_large'}`}
+							// 		key={movie.id}
+							// 		src={`${base_url}${
+							// 			isLargeRow ? movie.poster_path : movie.backdrop_path
+							// 		}`}
+							// 		alt={movie.name}
+							// 	/>
+							// 	<img className='list_add_icon' src={`${addicon}`} alt='' />
+							// </div>
 						)
 				)}
 			</div>

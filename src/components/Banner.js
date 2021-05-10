@@ -5,9 +5,11 @@ import axios from '../api/axios';
 import requests from '../api/Requests';
 import playIcon from '../styles/icons/Play.png';
 import infoIcon from '../styles/icons/info.png';
+import MovieModal from './MovieModal';
 
 function Banner() {
 	const [movie, setMovie] = useState([]);
+	const [isModal, setIsModal] = useState(false);
 
 	useEffect(() => {
 		async function fetchData() {
@@ -43,13 +45,23 @@ function Banner() {
 					<button className='banner_button banner_button_color'>
 						<img src={`${playIcon}`} alt='playIcon' /> Play
 					</button>
-					<button className='banner_button'>
+					<button className='banner_button' onClick={() => setIsModal(true)}>
 						<img src={`${infoIcon}`} alt='infoIcon' />
 						More Info
 					</button>
 				</div>
 			</div>
-
+			<MovieModal
+				isModal={isModal}
+				movie_name={movie?.title}
+				movie_title={movie?.name}
+				movie_description={movie?.overview}
+				rating={movie?.vote_average}
+				movie_id={movie?.id}
+				photo={movie?.backdrop_path}
+				isModal={isModal}
+				setIsModal={setIsModal}
+			/>
 			<div className='banner--fadeBottom' />
 		</header>
 	);

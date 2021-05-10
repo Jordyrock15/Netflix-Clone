@@ -16,11 +16,12 @@ import ProfileScreen from './screens/ProfileScreen';
 import HelpScreen from './screens/HelpScreen';
 import { unLoadProfiles } from './features/profileSlice';
 import SearchScreen from './screens/SearchScreen';
+import { selectCurrentProfile, unLoadCurrentProfile } from './features/currentProfileSlice';
 
 function App() {
 	const user = useSelector(selectUser);
 	const sub = useSelector(selectSubscription);
-
+	const currentProfile = useSelector(selectCurrentProfile);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
 				// Logged out
 				dispatch(unLoadProfiles());
 				dispatch(subscriptionChecker(null));
+				dispatch(unLoadCurrentProfile());
 				dispatch(logout());
 			}
 		});
@@ -50,39 +52,29 @@ function App() {
 				{!user ? (
 					<LoginScreen />
 				) : (
-					<Switch>
-						<Route path='/account'>
-							<AccountScreen />
-						</Route>
+					<>
+						<Switch>
+							<Route path='/account'>
+								<AccountScreen />
+							</Route>
 
-						{/* <Route path={`/`} exact>
-							<HomeScreen />
-						</Route>
+							<Route path='/search'>
+								{sub != null ? <SearchScreen /> : <AccountScreen />}
+							</Route>
 
-						<Route path='/profiles'>
-							<ProfileScreen />
-						</Route>
+							<Route path={`/`} exact>
+								{sub != null ? <HomeScreen /> : <AccountScreen />}
+							</Route>
 
-						<Route path='/help'>
-							<HelpScreen />
-						</Route> */}
+							<Route path='/profiles'>
+								{sub != null ? <ProfileScreen /> : <AccountScreen />}
+							</Route>
 
-						<Route path='/search'>
-							<SearchScreen />
-						</Route>
-
-						<Route path={`/`} exact>
-							{sub != null ? <HomeScreen /> : <AccountScreen />}
-						</Route>
-
-						<Route path='/profiles'>
-							{sub != null ? <ProfileScreen /> : <AccountScreen />}
-						</Route>
-
-						<Route path='/help'>
-							{sub != null ? <HelpScreen /> : <AccountScreen />}
-						</Route>
-					</Switch>
+							<Route path='/help'>
+								{sub != null ? <HelpScreen /> : <AccountScreen />}
+							</Route>
+						</Switch>
+					</>
 				)}
 			</Router>
 		</div>

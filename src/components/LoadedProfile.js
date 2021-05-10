@@ -4,13 +4,15 @@ import '../styles/LoadProfile.scss';
 import close from '../styles/icons/close.svg';
 import db from '../firebase';
 import { loadProfiles } from '../features/profileSlice';
+import { addCurrentProfile } from '../features/currentProfileSlice';
 import { selectUser } from '../features/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 function LoadedProfile({ name }) {
 	const [isHover, setIsHover] = useState(false);
 	const user = useSelector(selectUser);
-
+	const history = useHistory();
 	const dispatch = useDispatch();
 
 	const removeProfile = () => {
@@ -49,6 +51,12 @@ function LoadedProfile({ name }) {
 				console.error('Error fetching profiles', error);
 			});
 	};
+
+	const currentProfile = (name) => {
+		dispatch(addCurrentProfile(name));
+		history.push('/');
+	};
+
 	return (
 		<div className='profile_container'>
 			<div
@@ -64,6 +72,7 @@ function LoadedProfile({ name }) {
 					className='profile_icon'
 					src='https://pbs.twimg.com/profile_images/1240119990411550720/hBEe3tdn_400x400.png'
 					alt=''
+					onClick={() => currentProfile(name)}
 				/>
 				{isHover && (
 					<img
