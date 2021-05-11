@@ -14,8 +14,6 @@ function MovieModal({
 }) {
 	const base_url = 'https://image.tmdb.org/t/p/original/';
 
-	let fetchUrl = `https://api.themoviedb.org/3/movie/${movie_id}/videos?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`;
-
 	const exitDetailHandler = (e) => {
 		const element = e.target;
 		console.log(e.target);

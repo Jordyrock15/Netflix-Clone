@@ -40,6 +40,7 @@ function App() {
 				dispatch(subscriptionChecker(null));
 				dispatch(unLoadCurrentProfile());
 				dispatch(logout());
+				localStorage.clear();
 			}
 		});
 

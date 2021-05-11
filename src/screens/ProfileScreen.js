@@ -22,7 +22,7 @@ function ProfileScreen() {
 			.doc(`Default`)
 			.set({
 				name: 'Default',
-				movieList: '',
+				movieList: [],
 			})
 			.then(() => {
 				console.log('Document Written');
@@ -92,7 +92,9 @@ function ProfileScreen() {
 
 				<div className='profile-container'>
 					{profiles.map((profile) => (
-						<LoadedProfile name={profile.name} key={profile.name} />
+						<div key={profile.name}>
+							<LoadedProfile name={profile.name} movieList={profile.movieList} />
+						</div>
 					))}
 
 					<AddProfile />

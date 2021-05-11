@@ -44,7 +44,7 @@ function AddProfile() {
 			.doc(`${profileName.current.value}`)
 			.set({
 				name: profileName.current.value,
-				movieList: '',
+				movieList: [],
 			})
 			.then(() => {
 				console.log('Document Written');

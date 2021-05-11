@@ -4,12 +4,13 @@ import Nav from '../components/Nav';
 import { selectSearchMovies } from '../features/SearchMovieSlice';
 import '../styles/SearchScreen.scss';
 import addicon from '../styles/icons/add_icon.svg';
+import MovieModal from '../components/MovieModal';
+import SearchItem from '../components/SearchItem';
 
 function SearchScreen() {
 	const searchedMovies = useSelector(selectSearchMovies);
 	const [isLoading, setIsloading] = useState(true);
-
-	const baseURL = `https://image.tmdb.org/t/p/original/`;
+	const [isModal, setIsModal] = useState(false);
 
 	useEffect(() => {
 		if (searchedMovies === null) {
@@ -31,19 +32,12 @@ function SearchScreen() {
 						searchedMovies.map(
 							(movie) =>
 								movie.backdrop_path && (
-									<div className='search_poster_container' key={movie.id}>
-										<img
-											className='search_row_poster'
-											key={movie.id}
-											src={`${baseURL}${movie.backdrop_path}`}
-											alt={movie.name}
-										/>
-										<img
-											className='search_poster_addIcon'
-											src={`${addicon}`}
-											alt=''
-										/>
-									</div>
+									<SearchItem
+										movie={movie}
+										isModal={isModal}
+										setIsModal={setIsModal}
+										key={movie.id}
+									/>
 								)
 						)}
 				</div>

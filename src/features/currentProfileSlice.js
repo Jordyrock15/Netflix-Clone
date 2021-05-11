@@ -1,9 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let profile = localStorage.getItem('Current Profile');
+
+if (profile === null) {
+	profile = 'Default';
+}
+
 const currentProfileSlice = createSlice({
 	name: 'currentProfile',
 	initialState: {
-		currentProfile: 'Default',
+		currentProfile: profile,
 	},
 	reducers: {
 		addCurrentProfile: (state, action) => {

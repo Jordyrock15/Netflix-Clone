@@ -8,8 +8,9 @@ import { addCurrentProfile } from '../features/currentProfileSlice';
 import { selectUser } from '../features/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import { movieListChecker } from '../features/movieListSlice';
 
-function LoadedProfile({ name }) {
+function LoadedProfile({ name, movieList }) {
 	const [isHover, setIsHover] = useState(false);
 	const user = useSelector(selectUser);
 	const history = useHistory();
@@ -53,7 +54,11 @@ function LoadedProfile({ name }) {
 	};
 
 	const currentProfile = (name) => {
+		dispatch(movieListChecker([]));
 		dispatch(addCurrentProfile(name));
+
+		localStorage.setItem('Current Profile', name);
+
 		history.push('/');
 	};
 

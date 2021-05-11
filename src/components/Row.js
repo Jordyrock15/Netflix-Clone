@@ -5,7 +5,7 @@ import '../styles/Row.css';
 
 import RowItem from './RowItem';
 
-function Row({ title, fetchUrl, isLargeRow = false }) {
+function Row({ title, fetchUrl, isLargeRow = false, rowType }) {
 	const [movies, setMovies] = useState([]);
 
 	const base_url = 'https://image.tmdb.org/t/p/original/';
@@ -40,6 +40,8 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 									base_url={base_url}
 									movie_description={movie.overview}
 									rating={movie?.vote_average}
+									genre_ids={movie.genre_ids}
+									rowType={rowType}
 								/>
 							</Fragment>
 
