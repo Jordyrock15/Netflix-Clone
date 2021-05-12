@@ -1,9 +1,9 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import addicon from '../styles/icons/add_icon.svg';
 import closeicon from '../styles/icons/close.svg';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import MovieModal from './MovieModal';
-import axios from '../api/axios';
 import db from '../firebase';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
@@ -50,6 +50,15 @@ function RowItem({
 				.then(() => {
 					console.log('Movie Added');
 					dispatch(movieListChecker(movieListRedux + 1));
+					toast.success('Movie Successfully Added', {
+						position: 'bottom-center',
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+					});
 				})
 				.catch((error) => {
 					console.error('Error adding movie: ', error);
@@ -72,6 +81,15 @@ function RowItem({
 				.then(() => {
 					console.log('Document Successfully deleted');
 					dispatch(movieListChecker(movieListRedux + 1));
+					toast.error('Movie Successfully Removed', {
+						position: 'bottom-center',
+						autoClose: 5000,
+						hideProgressBar: false,
+						closeOnClick: true,
+						pauseOnHover: true,
+						draggable: true,
+						progress: undefined,
+					});
 				})
 				.catch((error) => {
 					console.error('Error removing document: ', error);
@@ -89,7 +107,7 @@ function RowItem({
 					onClick={() => setIsModal(true)}
 				/>
 				<img
-					className='list_add_icon'
+					className={rowType === 'addicon' ? 'list_add_icon' : 'list_remove_icon'}
 					src={rowType === 'addicon' ? addicon : closeicon}
 					alt=''
 					onClick={() =>

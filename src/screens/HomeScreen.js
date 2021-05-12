@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 // import '../styles/HomeScreen.css';
 import '../styles/HomeScreen.scss';
 import Banner from '../components/Banner';
@@ -6,10 +6,8 @@ import Nav from '../components/Nav';
 import requests from '../api/Requests';
 import Row from '../components/Row';
 import MovieListRow from '../components/MovieListRow';
-import { selectCurrentProfile } from '../features/currentProfileSlice';
-import { useSelector } from 'react-redux';
-import db from '../firebase';
-import { selectUser } from '../features/userSlice';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function HomeScreen() {
 	return (
@@ -76,6 +74,17 @@ function HomeScreen() {
 					rowType='addicon'
 				/>
 			</div>
+			<ToastContainer
+				position='bottom-center'
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 		</div>
 	);
 }

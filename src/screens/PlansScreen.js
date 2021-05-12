@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
 import db from '../firebase';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import '../styles/PlansScreen.css';
 import '../styles/PlansScreen.scss';
 import { loadStripe } from '@stripe/stripe-js';
@@ -44,6 +46,15 @@ function PlansScreen() {
 				const stripe = await loadStripe(`${process.env.REACT_APP_STRIPE_TEST_KEY}`);
 				stripe.redirectToCheckout({ sessionId });
 			}
+		});
+		toast.info('Loading Checkout!', {
+			position: 'bottom-center',
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
 		});
 	};
 
@@ -136,6 +147,17 @@ function PlansScreen() {
 					</div>
 				);
 			})}
+			<ToastContainer
+				position='bottom-center'
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 		</div>
 	);
 }

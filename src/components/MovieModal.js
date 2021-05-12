@@ -1,5 +1,4 @@
-import axios from '../api/axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import '../styles/MovieModal.scss';
 
 function MovieModal({

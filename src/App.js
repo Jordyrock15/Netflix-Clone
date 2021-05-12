@@ -16,12 +16,12 @@ import ProfileScreen from './screens/ProfileScreen';
 import HelpScreen from './screens/HelpScreen';
 import { unLoadProfiles } from './features/profileSlice';
 import SearchScreen from './screens/SearchScreen';
-import { selectCurrentProfile, unLoadCurrentProfile } from './features/currentProfileSlice';
+import { unLoadCurrentProfile } from './features/currentProfileSlice';
 
 function App() {
 	const user = useSelector(selectUser);
 	const sub = useSelector(selectSubscription);
-	const currentProfile = useSelector(selectCurrentProfile);
+
 	const dispatch = useDispatch();
 
 	useEffect(() => {

@@ -1,7 +1,6 @@
-import { createSerializableStateInvariantMiddleware } from '@reduxjs/toolkit';
 import React, { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from '../api/axios';
+
 import { selectCurrentProfile } from '../features/currentProfileSlice';
 import { selectMovieList } from '../features/movieListSlice';
 
@@ -56,7 +55,7 @@ function MovieListRow({ isLargeRow }) {
 				<div>
 					<h2>My List</h2>
 
-					<div className={`row_posters ${isLargeRow && 'row_posters_large'}`}>
+					<div className={`${isLargeRow && 'row_posters_large'}`}>
 						{movies.map(
 							(movie) =>
 								isLargeRow &&

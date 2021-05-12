@@ -103,7 +103,7 @@
 .search_icon {
 	position: fixed;
 	width: 30px;
-	right: 200px;
+	right: 140px;
 	cursor: pointer;
 	z-index: 10;
 	transition: right 0.4s ease-in-out 0.3s;
@@ -115,7 +115,7 @@
 
 	&:hover {
 		.search_icon {
-			right: 380px;
+			right: 320px;
 			transition: right 0.5s ease-in-out 0.25s;
 		}
 
@@ -129,7 +129,7 @@
 
 .search_input {
 	position: fixed;
-	right: 200px;
+	right: 140px;
 	width: 0px;
 	height: 20px;
 	padding: 8px 0px 8px 45px;

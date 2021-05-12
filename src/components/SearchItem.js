@@ -3,6 +3,8 @@ import MovieModal from '../components/MovieModal';
 import { Fragment, useState } from 'react';
 import db from '../firebase';
 import firebase from 'firebase/app';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'firebase/firestore';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../features/userSlice';
@@ -31,6 +33,15 @@ export default function SearchItem({ movie }) {
 			})
 			.then(() => {
 				console.log('Movie Added');
+				toast.success('Movie Successfully Added', {
+					position: 'bottom-center',
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				});
 			})
 			.catch((error) => {
 				console.error('Error adding movie: ', error);

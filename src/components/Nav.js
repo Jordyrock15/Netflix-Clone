@@ -6,7 +6,6 @@ import { searchMoviesChecker } from '../features/SearchMovieSlice';
 import { auth } from '../firebase';
 import axios from '../api/axios';
 //Icons
-import notificationIcon from '../styles/icons/notification.svg';
 import netflixLogo from '../styles/icons/netflix-logo.png';
 import searchIcon from '../styles/icons/search.svg';
 
@@ -90,19 +89,6 @@ function Nav() {
 					</div>
 				</div>
 
-				<img
-					className='notificationIcon'
-					src={`${notificationIcon}`}
-					alt='notificationIcon'
-					style={
-						location.pathname === '/help' ||
-						location.pathname === '/account' ||
-						location.pathname === '/profiles' ||
-						subscription === null
-							? { display: `none` }
-							: { display: `block` }
-					}
-				/>
 				<div className='search_container'>
 					<form className='search_form' onSubmit={(e) => movieSearch(e)}>
 						<img

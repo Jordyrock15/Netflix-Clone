@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 import Nav from '../components/Nav';
 import { selectSearchMovies } from '../features/SearchMovieSlice';
 import '../styles/SearchScreen.scss';
-import addicon from '../styles/icons/add_icon.svg';
-import MovieModal from '../components/MovieModal';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import SearchItem from '../components/SearchItem';
 
 function SearchScreen() {
@@ -42,6 +43,17 @@ function SearchScreen() {
 						)}
 				</div>
 			</div>
+			<ToastContainer
+				position='bottom-center'
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 		</div>
 	);
 }
