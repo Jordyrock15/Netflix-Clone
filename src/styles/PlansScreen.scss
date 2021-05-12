@@ -24,3 +24,97 @@
 		background-color: gray !important;
 	}
 }
+
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (max-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	.plansScreen_plan {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		opacity: 0.8;
+
+		button {
+			padding: 10px 20px;
+			font-size: 0.8rem;
+			color: white;
+			background-color: #e50914;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (max-width: 992px) {...}
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (max-width: 1200px) {...}
+
+// /* Extra small devices (phones, 550px and down) */
+@media only screen and (max-width: 550px) {
+	.plansScreen_plan {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		opacity: 0.8;
+
+		button {
+			padding: 10px 20px;
+			font-size: 0.6rem;
+			color: white;
+			background-color: #e50914;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+@media only screen and (max-width: 430px) {
+	.plansScreen {
+		margin-top: -5px;
+	}
+
+	.plansScreen_plan {
+		display: flex;
+		justify-content: space-between;
+		padding: 20px;
+		opacity: 0.8;
+
+		button {
+			padding: 5px 10px;
+			font-size: 0.6rem;
+			color: white;
+			background-color: #e50914;
+			font-weight: 600;
+			border: none;
+			cursor: pointer;
+		}
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.plansScreen_info {
+		h5 {
+			font-size: 0.6rem;
+		}
+
+		h6 {
+			font-size: 0.6rem;
+		}
+	}
+}

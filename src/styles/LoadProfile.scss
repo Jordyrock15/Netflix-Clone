@@ -1,9 +1,14 @@
-.profile_container {
+.single_profile_container {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	color: white;
+	margin-right: 2rem;
+	margin-left: 2rem;
+
+	margin-bottom: 1rem;
 }
 
 .profile_icon {
@@ -23,4 +28,15 @@
 
 .profile_icon_container {
 	position: relative;
+}
+
+@media only screen and (max-width: 900px) {
+	.profile_icon {
+		width: 100px;
+		margin-bottom: 0.5rem;
+	}
+
+	.single_profile_container {
+		font-size: 0.8rem;
+	}
 }

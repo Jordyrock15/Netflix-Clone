@@ -129,11 +129,246 @@
 
 .navbar_list_item {
 	margin: 1.5rem;
+	cursor: pointer;
 	font-size: 1;
 }
 
 footer {
 	background: #232323;
 	color: #a8a8a8;
-	height: 200px;
+}
+
+@media only screen and (max-width: 1024px) {
+	footer {
+		background: #232323;
+		color: #a8a8a8;
+		height: 305px;
+	}
+}
+
+// /* Extra small devices (phones, 600px and down) */
+// @media only screen and (max-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	.input_banner_container {
+		input {
+			width: 25rem;
+			padding: 1rem 2.5rem;
+			font-size: 1rem;
+			border: none;
+		}
+	}
+
+	.questions_title {
+		font-size: 2rem;
+	}
+
+	.accordian_item_title {
+		font-size: 1.2rem;
+	}
+
+	.accordian_item {
+		width: 30rem;
+	}
+
+	.accordian_answer_active {
+		font-size: 0.8rem;
+	}
+
+	.contact_container {
+		background-color: #e9e9e9;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		padding: 1rem 2rem;
+		justify-content: space-between;
+
+		h3 {
+			font-size: 1.5rem;
+			color: #252525;
+		}
+	}
+
+	.contact_buttons {
+		button {
+			padding: 0.8rem 1.5rem;
+
+			font-size: 0.7rem;
+		}
+	}
+
+	.navbar_list {
+		margin-right: 1rem;
+	}
+
+	.navbar_list_item {
+		margin-top: 1.5rem;
+		margin: 1rem;
+	}
+
+	footer {
+		background: #232323;
+		color: #a8a8a8;
+		height: 150px;
+	}
+}
+
+// /* Small devices (portrait tablets and large phones, 610px and up) */
+@media only screen and (max-width: 610px) {
+	.help_banner {
+		height: 400px;
+	}
+
+	.input_banner_container {
+		input {
+			width: 20rem;
+			padding: 1rem 2.5rem;
+			font-size: 1rem;
+		}
+
+		img {
+			position: absolute;
+			margin-left: 0.5rem;
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+	.navbar_list_item {
+		font-size: 0.7rem;
+	}
+
+	.accordian_item {
+		width: 20rem;
+	}
+
+	.accordian_item_title {
+		color: #e50914;
+		font-weight: bold;
+		font-size: 1rem;
+	}
+
+	.accordian_answer_active {
+		font-size: 0.6rem;
+		font-weight: 500;
+	}
+
+	.contact_container {
+		height: 80px;
+		padding: 1rem 2rem;
+
+		h3 {
+			font-size: 1.2rem;
+			color: #252525;
+		}
+	}
+
+	.contact_buttons {
+		button {
+			padding: 0.8rem 1.5rem;
+
+			font-size: 0.6rem;
+		}
+	}
+
+	footer {
+		height: 80px;
+	}
+}
+
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 500px) {
+	.help_banner {
+		height: 300px;
+
+		h1 {
+			font-size: 2rem;
+		}
+	}
+
+	.input_banner_container {
+		input {
+			width: 10rem;
+			padding: 1rem 2.5rem;
+			font-size: 0.7rem;
+		}
+
+		img {
+			position: absolute;
+			margin-left: 0.5rem;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+	}
+	.navbar_list_item {
+		font-size: 0.7rem;
+	}
+
+	.accordian_item {
+		width: 20rem;
+		padding: 0.7rem 1rem;
+	}
+
+	.accordian_container {
+		margin-bottom: 2rem;
+	}
+
+	.accordian_item_title {
+		color: #e50914;
+		font-weight: bold;
+		font-size: 1rem;
+	}
+
+	.accordian_answer_active {
+		font-size: 0.6rem;
+		font-weight: 500;
+	}
+
+	.contact_container {
+		display: flex;
+		flex-direction: column;
+		height: 80px;
+		padding: 1rem 1rem;
+
+		h3 {
+			font-size: 1.2rem;
+			color: #252525;
+		}
+	}
+
+	.contact_buttons {
+		button {
+			padding: 0.8rem 1.5rem;
+
+			font-size: 0.6rem;
+		}
+	}
+
+	.questions_title {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.navbar_list {
+		justify-content: center;
+	}
+
+	.accordian_item {
+		width: 15rem;
+	}
+
+	.accordian_item_title {
+		color: #e50914;
+		font-weight: bold;
+		font-size: 0.8rem;
+	}
+
+	.accordian_answer_active {
+		font-size: 0.5rem;
+		font-weight: 500;
+	}
+
+	footer {
+		max-height: 100vh;
+	}
 }

@@ -91,13 +91,12 @@ function ProfileScreen() {
 				<h1 className='header'>Manage Profiles:</h1>
 
 				<div className='profile-container'>
+					<AddProfile />
 					{profiles.map((profile) => (
 						<div key={profile.name}>
 							<LoadedProfile name={profile.name} movieList={profile.movieList} />
 						</div>
 					))}
-
-					<AddProfile />
 				</div>
 			</div>
 		</div>

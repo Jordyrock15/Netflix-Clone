@@ -1,11 +1,15 @@
 .profileScreen {
-	height: 100vh;
 	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
 }
 
 .profileScreen_body {
 	display: flex;
 	flex-direction: column;
+
 	width: 50%;
 	margin: auto;
 	margin-right: auto;
@@ -59,5 +63,120 @@
 	h3 {
 		border-bottom: 1px solid #282c2d;
 		padding-bottom: 10px;
+	}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+	.profileScreen {
+		p {
+			font-size: 0.9rem;
+		}
+	}
+	.profileScreen_body {
+		h1 {
+			font-size: 40px;
+			font-weight: 400;
+			border-bottom: 1px solid #282c2d;
+			margin-bottom: 20px;
+		}
+	}
+
+	.profileScreen_info {
+		display: flex;
+
+		img {
+			height: 70px;
+		}
+	}
+
+	.profileScreen_plans {
+		h3 {
+			padding-bottom: 5px;
+		}
+	}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+	.profileScreen {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (max-width: 1200px) {...}
+
+/* Small devices (portrait tablets and large phones, 640px and up) */
+@media only screen and (max-width: 640px) {
+	.profileScreen_details {
+		margin-left: 0px;
+	}
+
+	.profileScreen_info {
+		img {
+			display: none;
+		}
+	}
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 550px) {
+	.profileScreen {
+		p {
+			font-size: 0.9rem;
+		}
+	}
+
+	.profileScreen_body {
+		h1 {
+			font-size: 40px;
+			font-weight: 400;
+			border-bottom: 1px solid #282c2d;
+			margin-bottom: 20px;
+		}
+	}
+
+	.profileScreen_plans {
+		h3 {
+			padding-bottom: 5px;
+		}
+	}
+}
+
+@media only screen and (max-width: 420px) {
+	.profileScreen {
+		p {
+			font-size: 0.9rem;
+		}
+	}
+
+	.profileScreen_body {
+		width: 70%;
+
+		h1 {
+			font-size: 25px;
+			font-weight: 400;
+			border-bottom: 1px solid #282c2d;
+			margin-bottom: 20px;
+		}
+	}
+
+	.profileScreen_details {
+		h2 {
+			background-color: gray;
+			padding: 10px;
+			font-size: 12px;
+			padding-left: 15px;
+		}
+	}
+
+	.profileScreen_plans {
+		h3 {
+			font-size: 1rem;
+			padding-bottom: 5px;
+		}
 	}
 }

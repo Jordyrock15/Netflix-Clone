@@ -63,7 +63,7 @@ function LoadedProfile({ name, movieList }) {
 	};
 
 	return (
-		<div className='profile_container'>
+		<div className='single_profile_container'>
 			<div
 				className='profile_icon_container'
 				onMouseEnter={() => {
