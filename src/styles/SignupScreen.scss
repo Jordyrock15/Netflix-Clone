@@ -54,3 +54,17 @@
 	cursor: pointer;
 	text-decoration: underline;
 }
+
+@media only screen and (max-width: 500px) {
+	.signupScreen {
+		max-width: 200px;
+		padding: 60px;
+	}
+}
+
+@media only screen and (max-width: 370px) {
+	.signupScreen {
+		max-width: 190px;
+		padding: 50px;
+	}
+}

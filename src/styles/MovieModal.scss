@@ -59,3 +59,167 @@
 .movie_modal_description {
 	margin-top: 20px;
 }
+
+@media only screen and (max-width: 1200px) {
+	.movie_modal_card {
+		background: black;
+		width: 40rem;
+		height: 30rem;
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			margin-bottom: 20px;
+			font-size: 1rem;
+		}
+
+		img {
+			width: 70%;
+			height: auto;
+		}
+
+		p {
+			font-size: 0.8rem;
+		}
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.movie_modal_card {
+		background: black;
+		width: 30rem;
+		height: 27rem;
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: 1rem;
+		}
+
+		img {
+			width: 80%;
+			height: auto;
+		}
+
+		p {
+			font-size: 0.8rem;
+		}
+
+		.movie_modal_description {
+			margin-top: 10px;
+		}
+	}
+}
+
+@media only screen and (max-width: 610px) {
+	.movie_modal_card {
+		background: black;
+		width: 20rem;
+		height: 25rem;
+
+		h1 {
+			font-size: 1.5rem;
+		}
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: 1rem;
+		}
+
+		img {
+			width: 80%;
+			height: auto;
+		}
+
+		p {
+			font-size: 0.8rem;
+		}
+
+		.movie_modal_top_row {
+			h1 {
+				margin-bottom: 1rem;
+			}
+		}
+
+		.movie_modal_description {
+			margin-top: 10px;
+		}
+	}
+}
+
+@media only screen and (max-width: 520px) {
+	.movie_modal_card {
+		background: black;
+		width: 15rem;
+		height: 21rem;
+
+		h1 {
+			font-size: 1rem;
+		}
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: 0.8rem;
+		}
+
+		img {
+			width: 80%;
+			height: auto;
+		}
+
+		p {
+			font-size: 0.7rem;
+		}
+
+		.movie_modal_top_row {
+			h1 {
+				margin-bottom: 0rem;
+			}
+		}
+
+		.movie_modal_description {
+			margin-top: 10px;
+		}
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.movie_modal_card {
+		background: black;
+		width: 12rem;
+		height: 23rem;
+
+		h1 {
+			font-size: 1rem;
+		}
+
+		h2 {
+			margin-bottom: 10px;
+			font-size: 0.8rem;
+		}
+
+		img {
+			width: 80%;
+			height: auto;
+		}
+
+		p {
+			font-size: 0.7rem;
+		}
+
+		.movie_modal_top_row {
+			h1 {
+				margin-bottom: 0rem;
+			}
+		}
+
+		.movie_modal_description {
+			margin-top: 10px;
+		}
+	}
+}

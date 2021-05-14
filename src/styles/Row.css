@@ -151,3 +151,41 @@
 .row_posters_large .poster_container_large:last-of-type .row_poster_large:hover {
 	overflow-x: hidden;
 }
+
+.myList {
+	margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+	.row_poster {
+		max-height: 110px;
+	}
+
+	.row_poster_large {
+		max-height: 200px;
+		transition: margin 700ms;
+	}
+
+	.row_posters {
+		display: flex;
+		margin-bottom: 1.5rem;
+		align-items: center;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.row_poster {
+		max-height: 90px;
+	}
+
+	.row_poster_large {
+		max-height: 170px;
+		transition: margin 700ms;
+	}
+
+	.row_posters {
+		display: flex;
+		margin-bottom: 1.5rem;
+		align-items: center;
+	}
+}

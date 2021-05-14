@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import '../styles/HomeScreen.css';
 import '../styles/HomeScreen.scss';
 import Banner from '../components/Banner';
@@ -8,8 +8,16 @@ import Row from '../components/Row';
 import MovieListRow from '../components/MovieListRow';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import { searchMoviesChecker } from '../features/SearchMovieSlice';
 
 function HomeScreen() {
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch(searchMoviesChecker(null));
+	});
+
 	return (
 		<div className='homeScreen'>
 			<Nav />

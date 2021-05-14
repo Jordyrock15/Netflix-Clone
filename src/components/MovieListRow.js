@@ -30,7 +30,6 @@ function MovieListRow({ isLargeRow }) {
 			.get()
 			.then((querySnapshot) => {
 				setMovieList(querySnapshot.data().movieList);
-				console.log(movies);
 			})
 			.catch((error) => {
 				console.error('Error fetching profiles', error);
@@ -53,7 +52,7 @@ function MovieListRow({ isLargeRow }) {
 		<div className='row'>
 			{movieList.length !== 0 && (
 				<div>
-					<h2>My List</h2>
+					<h2 className='myList'>My List</h2>
 
 					<div className={`${isLargeRow && 'row_posters_large'}`}>
 						{movies.map(

@@ -104,8 +104,6 @@ function PlansScreen() {
 					setMount(false);
 				}
 			});
-
-		console.log('hi');
 		return () => mount;
 	}, []);
 

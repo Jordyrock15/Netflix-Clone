@@ -50,3 +50,22 @@
 	transition: opacity 0.4s;
 	z-index: 20000;
 }
+
+@media only screen and (max-width: 900px) {
+	.search_row_poster {
+		width: 300px;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.search_row_poster {
+		width: 250px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.search_movie_container {
+		justify-content: center;
+		align-items: center;
+	}
+}

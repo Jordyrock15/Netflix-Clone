@@ -13,7 +13,6 @@ function ProfileScreen() {
 	const profiles = useSelector(selectProfile);
 	const user = useSelector(selectUser);
 	const dispatch = useDispatch();
-	console.log(profiles);
 
 	const addDefaultProfile = () => {
 		db.collection('customers')

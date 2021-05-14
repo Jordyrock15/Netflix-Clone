@@ -47,7 +47,6 @@ function AddProfile() {
 				movieList: [],
 			})
 			.then(() => {
-				console.log('Document Written');
 				dispatch(loadProfiles([]));
 				profileLoad();
 			})
@@ -57,13 +56,6 @@ function AddProfile() {
 
 		setIsActive(false);
 	};
-
-	// useEffect(() => {
-	// 	setIsProfiles([]);
-	// 	profileLoad();
-	// }, []);
-
-	console.log(profiles);
 
 	return (
 		<div className='AddProfile_container' onClick={() => setIsActive(true)}>
