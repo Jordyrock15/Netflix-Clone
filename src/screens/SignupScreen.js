@@ -12,9 +12,7 @@ function SignupScreen({ emailText }) {
 		e.preventDefault();
 
 		auth.createUserWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
-			.then((authUser) => {
-				console.log(authUser);
-			})
+			.then((authUser) => {})
 			.catch((error) => {
 				alert(error.message);
 			});
@@ -24,9 +22,7 @@ function SignupScreen({ emailText }) {
 		e.preventDefault();
 
 		auth.signInWithEmailAndPassword(emailRef.current.value, passwordRef.current.value)
-			.then((authUser) => {
-				console.log(authUser);
-			})
+			.then((authUser) => {})
 			.catch((error) => {
 				alert(error.message);
 			});

@@ -43,7 +43,6 @@ function Nav() {
 			`https://api.themoviedb.org/3/search/multi?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-U&query=${input}&page=1&include_adult=false`
 		);
 		dispatch(searchMoviesChecker(request.data.results));
-		console.log(request.data.results);
 
 		return request;
 	}

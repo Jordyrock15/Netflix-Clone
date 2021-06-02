@@ -15,7 +15,6 @@ function MovieModal({
 
 	const exitDetailHandler = (e) => {
 		const element = e.target;
-		console.log(e.target);
 
 		if (
 			element.classList.contains('movie_modal_container') ||

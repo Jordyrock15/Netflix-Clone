@@ -16,10 +16,8 @@ function SearchScreen() {
 	useEffect(() => {
 		if (searchedMovies === null) {
 			setIsloading(true);
-			console.log(isLoading);
 		} else {
 			setIsloading(false);
-			console.log(isLoading);
 		}
 	}, [searchedMovies]);
 

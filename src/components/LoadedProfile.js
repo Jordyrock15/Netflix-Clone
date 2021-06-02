@@ -29,7 +29,6 @@ function LoadedProfile({ name, movieList }) {
 			})
 			.catch((error) => {
 				console.error('Error removing document: ', error);
-				console.log(name);
 			});
 	};
 
